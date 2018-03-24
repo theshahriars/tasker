@@ -15,6 +15,10 @@ class CreateStatusesTable extends Migration
     {
         Schema::create('statuses', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->integer('priority');
+            $table->string('color')->comment('Color code should be hexadecimal value like "#000" or "#000000".');
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
         });
     }
